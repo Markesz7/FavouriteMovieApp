@@ -1,7 +1,11 @@
 package hu.bme.aut.favouritemovieapp
 
+import org.springframework.data.annotation.Id
+import org.springframework.data.relational.core.mapping.Table
+
+@Table("Movies")
 data class Movie(
-    val id: Long,
+    @Id var id: Long?,
     val title: String,
     val year: Int,
     val genres: List<String>,
