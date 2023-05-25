@@ -23,6 +23,7 @@ class MovieController(val movieService: MovieService) {
         if(updatedMovie.id == null)
             throw IdMandatoryException()
 
+        movieService.getMovieById(updatedMovie.id!!) ?: throw MovieNotFoundException(updatedMovie.id!!)
         movieService.updateMovie(updatedMovie)
     }
 

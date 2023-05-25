@@ -1,16 +1,18 @@
 package hu.bme.aut.favouritemovieapp
 
-import org.springframework.data.annotation.Id
-import org.springframework.data.relational.core.mapping.Table
+import jakarta.persistence.*
 
-@Table("Movies")
+@Entity
 data class Movie(
-    @Id var id: Long?,
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    var id: Long?,
     val title: String,
-    val year: Int,
+    val releaseYear: Int,
     val genres: List<String>,
     val director: String,
-    val runtime: Int?,
+    val movieRuntime: Int?,
+    @Column(length = 1000)
     val plot: String?,
     val imdbRating: Float?
 )
