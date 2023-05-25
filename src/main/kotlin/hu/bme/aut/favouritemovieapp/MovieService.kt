@@ -18,13 +18,7 @@ class MovieService(val db: MovieRepository) {
         return db.save(newMovie)
     }
 
-    fun updateMovie(updatedMovie: Movie)
-    {
-        db.save(updatedMovie)
-    }
+    fun updateMovie(updatedMovie: Movie) = db.save(updatedMovie)
 
-    fun deleteMovie(id: Long)
-    {
-        db.deleteById(id)
-    }
+    fun deleteMovie(id: Long) = db.deleteById(id)
 }
